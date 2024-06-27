@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { Home, ShoppingCart, MessageSquare } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -24,6 +27,29 @@ const Chatbot = () => {
 
   return (
     <div className="flex flex-col items-center p-4">
+      <nav className="w-full max-w-2xl mb-4">
+        <ul className="flex justify-around bg-muted p-2 rounded-md">
+          <li>
+            <Link to="/" className="flex items-center gap-2 text-primary">
+              <Home className="h-5 w-5" />
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link to="/orders" className="flex items-center gap-2 text-muted-foreground">
+              <ShoppingCart className="h-5 w-5" />
+              Orders
+              <Badge className="ml-1">6</Badge>
+            </Link>
+          </li>
+          <li>
+            <Link to="/chatbot" className="flex items-center gap-2 text-muted-foreground">
+              <MessageSquare className="h-5 w-5" />
+              Chatbot
+            </Link>
+          </li>
+        </ul>
+      </nav>
       <Card className="w-full max-w-2xl">
         <CardHeader>
           <CardTitle>Chatbot</CardTitle>
